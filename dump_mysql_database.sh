@@ -67,5 +67,16 @@ GPG_COMMAND="/usr/bin/gpg --yes  --encrypt --recipient $GPG_EMAIL $DESTINATION_F
 # Execute these commands
 $DUMP_COMMAND | $BZIP_COMMAND | $GPG_COMMAND > $DESTINATION_FOLDER$BACKUP_FILE
 
+# Check if the final file has been created
+if ! [ -f $DESTINATION_FOLDER$BACKUP_FILE ];
+then
+  echo "$0: [$(date)] $DESTINATION_FOLDER$BACKUP_FILE doe not exist, aborting"
+  exit 1
+fi
+
+echo "$0: [$(date)] $DESTINATION_FOLDER$BACKUP_FILE created"
+
 # Delete files older than x days
 find $DESTINATION_FOLDER/* -mtime +$KEEP_BACKUPS_DAYS -exec rm {} \;
+
+exit 0
