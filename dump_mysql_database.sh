@@ -70,7 +70,7 @@ $DUMP_COMMAND | $BZIP_COMMAND | $GPG_COMMAND > $DESTINATION_FOLDER$BACKUP_FILE
 # Check if the final file has been created
 if ! [ -f $DESTINATION_FOLDER$BACKUP_FILE ];
 then
-  echo "$0: [$(date)] $DESTINATION_FOLDER$BACKUP_FILE doe not exist, aborting"
+  echo "$0: [$(date)] $DESTINATION_FOLDER$BACKUP_FILE has not been created, aborting"
   exit 1
 fi
 
