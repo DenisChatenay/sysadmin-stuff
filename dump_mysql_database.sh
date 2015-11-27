@@ -16,7 +16,7 @@ MYSQL_USER="my_dbuser"
 MYSQL_PASSWD="my_dbpassword"
 
 # Destination folder where the database will be backed up
-DESTINATION_FOLDER="/home/sysadmin/backup/www/databases/"
+DESTINATION_FOLDER="~/backup/databases/"
 
 # Name of the backed up file
 BACKUP_FILE=$(date +"%d-%m-%Y")-$MYSQL_DB.sql.bz2
