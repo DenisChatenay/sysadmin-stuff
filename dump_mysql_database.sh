@@ -5,7 +5,7 @@
 # License : Apache 2.0                             #
 # Purpose : Dump and encrypt a MYSQL database      #
 # Note :    Works with GPG and BZIP2 libs          #
-# Blog :    https://blog.chatenay.me/		           #
+# Blog :    https://blog.chatenay.me/		   #
 ####################################################
 
 #######################
