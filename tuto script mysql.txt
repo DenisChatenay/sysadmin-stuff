@@ -1,0 +1,21 @@
+cd /usr/local/bin
+
+sudo wget https://raw.githubusercontent.com/DenisChatenay/sysadmin-stuff/master/dump_mysql_database.sh
+
+sudo chown myuser:myuser dump_mysql_database.sh
+
+chmod 700 dump_mysql_database.sh
+
+
+CREATE USER 'my_dbuser'@'localhost' IDENTIFIED BY 'my_dbpassword';
+
+GRANT SELECT, LOCK TABLES ON `my_dbname`.* TO 'my_dbuser'@'localhost';
+
+crontab -e
+
+00 00 * * * /usr/local/bin/dump_mysql_database.sh >> /var/log/dump_mysql_database.log 2>&1
+
+
+sudo touch /var/log/dump_mysql_database.log
+
+sudo chown myuser:myuser /var/log/dump_mysql_database.log
